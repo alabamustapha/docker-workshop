@@ -42,7 +42,6 @@ services:
     # To run Kestra in a rootless mode in production, see: https://kestra.io/docs/installation/podman-compose
     user: "root"
     command: server standalone
-    
     volumes:
       - kestra_data:/app/storage
       - /var/run/docker.sock:/var/run/docker.sock
@@ -65,7 +64,7 @@ services:
             gemini:
               api-key: "aaaaaaaaaa"
               model-name: gemini-2.5-flash
-          repository:
+          repository:cd
             type: postgres
           storage:
             type: local
