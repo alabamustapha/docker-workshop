@@ -42,6 +42,7 @@ services:
     # To run Kestra in a rootless mode in production, see: https://kestra.io/docs/installation/podman-compose
     user: "root"
     command: server standalone
+    
     volumes:
       - kestra_data:/app/storage
       - /var/run/docker.sock:/var/run/docker.sock
@@ -59,6 +60,11 @@ services:
             basicAuth:
               username: "admin@kestra.io" # it must be a valid email address
               password: Admin1234
+          ai:
+            type: "gemini"
+            gemini:
+              api-key: "aaaaaaaaaa"
+              model-name: gemini-2.5-flash
           repository:
             type: postgres
           storage:
